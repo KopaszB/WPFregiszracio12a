@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPFregiszracio.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFregiszracio"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="650" Width="500"
+        WindowStartupLocation="CenterScreen" BorderBrush="LightGray"
+        BorderThickness="5">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Center"
+                Margin="0 30 0 10"
+                VerticalAlignment="Center"
+                Width="400">
+        <TextBlock Text="Regisztráció"
+                   FontSize="36"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Text="Kérlek add meg az adataidat"
+                   Foreground="Gray"
+                   FontSize="13"
+                   HorizontalAlignment="Center"/>
+        <StackPanel>
+            <Label Content="Név:"
+                   FontSize="15"/>
+            <TextBox FontSize="16"/>
+        </StackPanel>
+        <StackPanel Margin="0 15 0 0">
+            <Label Content="E-mail:"
+                   FontSize="15"/>
+            <TextBox FontSize="16"/>
+        </StackPanel>
+        <StackPanel Margin="0 15 0 0">
+            <Label Content="Jelszó:"
+                   FontSize="15"/>
+            <TextBox FontSize="16"/>
+        </StackPanel>
+        <StackPanel Margin="0 15 0 0">
+            <Label Content="Jelszó megerősítése:"
+                   FontSize="15"/>
+            <TextBox FontSize="16"/>
+        </StackPanel>
+        <StackPanel>
+            <CheckBox Content="Elfogadom"/>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
