@@ -23,26 +23,52 @@
         <StackPanel>
             <Label Content="Név:"
                    FontSize="15"/>
-            <TextBox FontSize="16"/>
+            <TextBox FontSize="16"
+                     Padding="0 5"
+                     Name="tbx_nev"/>
         </StackPanel>
         <StackPanel Margin="0 15 0 0">
             <Label Content="E-mail:"
                    FontSize="15"/>
-            <TextBox FontSize="16"/>
+            <TextBox FontSize="16"
+                     Padding="0 5"
+                     Name="tbx_email"/>
         </StackPanel>
         <StackPanel Margin="0 15 0 0">
             <Label Content="Jelszó:"
                    FontSize="15"/>
-            <TextBox FontSize="16"/>
+            <TextBox FontSize="16"
+                     Padding="0 5"
+                     Name="tbx_jelszo1"/>
         </StackPanel>
         <StackPanel Margin="0 15 0 0">
             <Label Content="Jelszó megerősítése:"
                    FontSize="15"/>
-            <TextBox FontSize="16"/>
+            <TextBox FontSize="16"
+                     Padding="0 5"
+                     Name="tbx_jelszo2"/>
         </StackPanel>
-        <StackPanel>
-            <CheckBox Content="Elfogadom"/>
+        <StackPanel Margin="0 10 0 20">
+            <CheckBox Content="Elfogadom a felhasználási feltételeket"
+                      Name="feltetel"/>
         </StackPanel>
-        
+        <Button Name="btn_regisztracio"
+                Content="Regisztráció"
+                Padding="0 10"
+                Background="Black"
+                Foreground="White"
+                FontSize="16"
+                FontWeight="Bold"
+                Click="btn_regisztracio_Click"/>
+        <StackPanel Orientation="Horizontal"
+                    Margin="0 5"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Már van fiókod?"
+                       Margin="0 0 5 0"/>
+            <TextBlock>
+                <Hyperlink>Jelentkezz be</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
     </StackPanel>
 </Window>

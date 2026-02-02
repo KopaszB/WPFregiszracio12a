@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace WPFregiszracio
 {
@@ -20,9 +21,27 @@ namespace WPFregiszracio
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<User> felhasznalok = new List<User>();
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btn_regisztracio_Click(object sender, RoutedEventArgs e)
+        {
+            if (feltetel.IsChecked==true && tbx_jelszo1.Text==tbx_jelszo2.Text)
+            {
+                string nev = tbx_nev.Text;
+                string email = tbx_email.Text;
+                string jelszo = tbx_jelszo1.Text;
+                var egyFelhasznalo = new User(nev, email, jelszo);
+                felhasznalok.Add(egyFelhasznalo);
+                using (StreamWriter iro = new StreamWriter("felhasznalok.txt", true))
+                {
+                    iro.WriteLine($"{egyFelhasznalo.Nev};{egyFelhasznalo.Email};{egyFelhasznalo.Jelszo}");
+                }
+            }
+            
         }
     }
 }
