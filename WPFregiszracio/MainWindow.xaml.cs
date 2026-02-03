@@ -40,6 +40,7 @@ namespace WPFregiszracio
                 {
                     iro.WriteLine($"{egyFelhasznalo.Nev};{egyFelhasznalo.Email};{egyFelhasznalo.Jelszo}");
                 }
+                MessageBox.Show("Sikeres regisztráció!");
             }
             else
             {
