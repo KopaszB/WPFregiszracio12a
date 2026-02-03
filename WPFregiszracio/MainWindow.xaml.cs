@@ -41,6 +41,10 @@ namespace WPFregiszracio
                     iro.WriteLine($"{egyFelhasznalo.Nev};{egyFelhasznalo.Email};{egyFelhasznalo.Jelszo}");
                 }
             }
+            else
+            {
+                MessageBox.Show("Fogadd el feltételeket, vagy ellenőrizd a jelszavak egyezőségét!", "Hiba!", MessageBoxButton.OK,MessageBoxImage.Warning);
+            }
             
         }
     }
