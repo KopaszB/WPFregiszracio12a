@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WPFregiszracio
 {
@@ -35,7 +36,10 @@ namespace WPFregiszracio
             string domain = email.Substring(atIndex+1);
 
             if (string.IsNullOrEmpty(local)||string.IsNullOrEmpty(domain)) return false;
-
+            int dotIndex = domain.LastIndexOf(".");
+            if (dotIndex < 0 || dotIndex>=domain.Length-2) return false;
+            if (domain.Contains("..")) return false;
+            if (string.IsNullOrEmpty(email)) return false;
 
             return true;
         }
@@ -69,6 +73,43 @@ namespace WPFregiszracio
             
             
             
+        }
+
+        private void tbx_email_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (IsValidEmail(tbx_email.Text))
+            {
+                tbx_email.BorderBrush = Brushes.Green;
+
+            }
+            else
+            {
+                tbx_email.BorderBrush=  Brushes.Red;
+                MessageBox.Show("Nem megfelelő az e-mail formátuma!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private bool IsValidPassword(string jelszo)
+        {
+            jelszo = tbx_jelszo1.Text;
+            if (!Regex.IsMatch(jelszo, @"(?=.*\d)")) return false;
+            if (!Regex.IsMatch(jelszo, @"(?=.*[^\w\s])")) return false;
+            if (jelszo.Length<8) return false;
+       
+            return true;
+        }
+
+        private void tbx_jelszo1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (IsValidPassword(tbx_jelszo1.Text))
+            {
+                tbx_jelszo1.BorderBrush = Brushes.Green;
+            }
+            else
+            {
+                tbx_jelszo1.BorderBrush = Brushes.Red;
+                MessageBox.Show("Nem megfelelő a jelszo formátuma!", "Hiba!", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

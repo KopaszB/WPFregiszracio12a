@@ -32,14 +32,16 @@
                    FontSize="15"/>
             <TextBox FontSize="16"
                      Padding="0 5"
-                     Name="tbx_email"/>
+                     Name="tbx_email"
+                     LostFocus="tbx_email_LostFocus"/>
         </StackPanel>
         <StackPanel Margin="0 15 0 0">
             <Label Content="Jelszó:"
                    FontSize="15"/>
             <TextBox FontSize="16"
                      Padding="0 5"
-                     Name="tbx_jelszo1"/>
+                     Name="tbx_jelszo1"
+                     LostFocus="tbx_jelszo1_LostFocus"/>
         </StackPanel>
         <StackPanel Margin="0 15 0 0">
             <Label Content="Jelszó megerősítése:"
